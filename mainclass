@@ -1,0 +1,96 @@
+import java.util.Scanner;
+
+public class Person
+{
+    
+    public static void main(String[]args)
+{
+    
+    
+    Scanner scan = new Scanner (System.in);
+    System.out.println("Are you a male or a female? ");
+    String gender = scan.nextLine();
+    
+    System.out.println("What is your name? ");
+    String name = scan.nextLine();
+    
+    System.out.println("Do you currently have any medical issues that impacts your everyday health? ");
+    String disease = scan.nextLine();
+    
+    
+    double maleBmr=0.0;
+    double femaleBmr=0.0;
+    
+    if (gender.equals("male"))
+    {
+    
+    System.out.println("How many pounds do you weigh?");
+    int newWeight = scan.nextInt();
+    System.out.println("How tall are you in inches? ");
+    int newHeight = scan.nextInt();
+    System.out.println("How old are you? ");
+    int age = scan.nextInt();
+    maleBmr= 66.47+(6.24*newWeight)+(12.7*newHeight)-(6.755*age);
+    System.out.println("Basal Metabolic Rate: " + maleBmr);
+    }
+    
+    else if (gender.equals("female"))
+    {
+    
+    System.out.println("How many pounds do you weigh?");
+    int newWeight = scan.nextInt();
+    System.out.println("How tall are you in inches? ");
+    int newHeight = scan.nextInt();
+    System.out.println("How old are you? ");
+    int age = scan.nextInt();
+    femaleBmr= 655.1+(4.35*newWeight)+(4.7*newHeight)-(4.7*age);
+    System.out.println("Basal Metabolic Rate: " + femaleBmr);
+    }
+    
+    if ((maleBmr>1700.00 && maleBmr<2400)|| (femaleBmr>1300.00 && femaleBmr<2000))
+    {
+    
+    
+    System.out.println("You have a healthy BMR, this app will be able to help you in following a set exercise plan while tracking your everyday calories.");
+    System.out.println("Do you have a gym membership? Yes or no?");
+    Scanner happy = new Scanner (System.in);
+    String answer = happy.nextLine();
+    if (answer.equals("yes"))
+    {
+    System.out.println("Great! Continue to attend your local gym!");
+    }
+    else if (answer.equals("no"))
+    {
+    System.out.println("This app will provide you with plenty of activities you can do to stay active while maintaining a healthy daily caloric intake!");
+    System.out.println("What is your daily caloric intake goal? ");
+    int goal = scan.nextInt();
+    System.out.println("What is your weekly grocery budget!");
+    double price = scan.nextDouble();
+    System.out.println("What would you like to track first: Diet or Exercise? ");
+    Scanner decision = new Scanner (System.in);
+    String newDecision = decision.nextLine();
+    
+    
+    }
+    
+    }
+    
+    else if (maleBmr<1700.00 || femaleBmr<1300.00)
+    {
+    System.out.println("Your BMR is extremely low, please alert a doctor before continuing to use this app.");
+    }
+    
+    else if (maleBmr>2400.00 || femaleBmr>2000.00)
+    {
+    System.out.println("Your BMR is extremely high, please alert a doctor before continuing to use this app.");
+    
+    }
+    
+    
+    }
+    
+}
+
+
+
+
